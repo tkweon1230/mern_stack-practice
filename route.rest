@@ -1,0 +1,127 @@
+// Register a user
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "Steve",
+    "email": "steve@gmail.com",
+    "password": "123456"
+}
+
+###
+// Get all users
+GET http://localhost:5000/api/users
+
+###
+// Getting user by token
+GET http://localhost:5000/api/auth
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzA5ODUzNiwiZXhwIjoxNjI2Njk4NTM2fQ.vNEj4Lt4Wy7-GghytHbD6eN-SXAH1oiNCrWLGlB2kdM
+
+
+###
+// Login and get token
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+    "email": "dude@gmail.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:5000/api/posts
+
+###
+
+// Get logged in user and user's profile
+GET http://localhost:5000/api/profile/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzA5ODUzNiwiZXhwIjoxNjI2Njk4NTM2fQ.vNEj4Lt4Wy7-GghytHbD6eN-SXAH1oiNCrWLGlB2kdM
+###
+
+// Create and update user's profile
+POST http://localhost:5000/api/profile
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZThjNDgyMjJkMTQxY2Y0MGM1YTIxIn0sImlhdCI6MTYyMzEwMDQ4OCwiZXhwIjoxNjIzNDYwNDg4fQ.iQjg8h44qYT3mLujSI154vd2FvovhOAdANVl0lovwdM
+
+{
+    "company": "test ",
+    "status": "test",
+    "website": "https://www.mywebsite.com",
+    "skills": "C++, Ruby,  Python, REST, a lot of skills",
+    "location": "Nashville, TN",
+    "bio": "This is my biooooo",
+    "githubusername": "ttest",
+    "twitter": "idonthaveatwitter"
+}
+
+###
+// Get all profiles
+GET http://localhost:5000/api/profile
+
+###
+// Get user profile by ID
+GET http://localhost:5000/api/profile/user/60be7249df49aa3afcf969db
+
+###
+// Delete user and user profile by token
+DELETE http://localhost:5000/api/profile
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZThjNDgyMjJkMTQxY2Y0MGM1YTIxIn0sImlhdCI6MTYyMzEwMDQ4OCwiZXhwIjoxNjIzNDYwNDg4fQ.iQjg8h44qYT3mLujSI154vd2FvovhOAdANVl0lovwdM
+
+
+### 
+// Update profile experience
+PUT http://localhost:5000/api/profile/experience
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzEwMTIwOCwiZXhwIjoxNjI2NzAxMjA4fQ.MR_YvWoz6rsZlLKJgxFMsZBO7xNrFtjHdE7W7Usbi1Y
+
+{
+    "title": "delete title",
+    "company": "delete company",
+    "location": "delete location",
+    "from": "06/07/2021",
+    "current": true,
+    "description": "delete description"
+}
+
+###
+// Delete profile experience by ID
+DELETE http://localhost:5000/api/profile/experience/60be8ff4be2a6621006be61a
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzEwMTIwOCwiZXhwIjoxNjI2NzAxMjA4fQ.MR_YvWoz6rsZlLKJgxFMsZBO7xNrFtjHdE7W7Usbi1Y
+
+### 
+// Update profile education
+PUT http://localhost:5000/api/profile/education
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzEwMTIwOCwiZXhwIjoxNjI2NzAxMjA4fQ.MR_YvWoz6rsZlLKJgxFMsZBO7xNrFtjHdE7W7Usbi1Y
+
+{
+    "school": "SCHOOL",
+    "degree": "BACHELORS",
+    "fieldofstudy": "COMPSCI",
+    "from": "06/07/2021",
+    "current": true,
+    "description": "description"
+}
+
+###
+// Delete profile education by ID
+DELETE http://localhost:5000/api/profile/education/60be92590a85c91084afb07a
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzEwMTIwOCwiZXhwIjoxNjI2NzAxMjA4fQ.MR_YvWoz6rsZlLKJgxFMsZBO7xNrFtjHdE7W7Usbi1Y
+
+### 
+// Get github repos
+GET http://localhost:5000/api/profile/github/tkweon1230
+
+###
+// Add a post
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBiZTcyNDlkZjQ5YWEzYWZjZjk2OWRiIn0sImlhdCI6MTYyMzEwMTIwOCwiZXhwIjoxNjI2NzAxMjA4fQ.MR_YvWoz6rsZlLKJgxFMsZBO7xNrFtjHdE7W7Usbi1Y
+
+{
+    "text": "Test Text"
+}
+
+###
+

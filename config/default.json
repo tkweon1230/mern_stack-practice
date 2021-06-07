@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://tkweon1230:tkweon1230@cluster0.gflmf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "972b590f26e2b6829932",
+    "githubSecret": "619e5dcad71b9193eca4ff3324ea61a2dfa989f4"
+}
